@@ -1,30 +1,20 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-
-typedef struct  student
+#include <stdio.h>
+#include <math.h>
+int main()
 {
-	char name[10];
-	char stu_id[15];
-	int age;
-	char sex[5];
-
-       }student;
-
-student* find_id(char id[], student stus[], int num)
-
-{
-
-	int i;
-	for (i = 0; i < num; i++
-	{
-
-		if (strcmp(stus[i].stu_id, id) == 0)
-
-
-			return &stus[i]
-
-		else
-			return NULL;
-
-	}
+    double x, y, t;
+    int i, n;
+    printf("请输入弧度x（0<=x<=10）和精确度n（0<=n<=1000）");
+    scanf_s("%lf%d", &x, &n);
+    y = 1;
+    t = 1;
+    for (i = 1; i <= n; i++)
+    {
+        t *= x * x;
+        t /= 2 * i * (2 * i - 1);
+        t *= -1;
+        y += t;
+    }
+    printf("%.8lf\n", y);
+    return 0;
+}
